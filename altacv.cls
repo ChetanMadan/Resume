@@ -23,8 +23,8 @@
 \ProvidesClass{altacv}[2018/12/01 AltaCV v1.1.5, yet another alternative class for a résumé/curriculum vitae.]
 
 %% v1.1: Optionally load academicons
-\newif\if@academicons
-\DeclareOption{academicons}{\@academiconstrue}
+\newif\if@roboto
+\DeclareOption{roboto}{\@roboto}
 %% v1.1.3: Choice of round/square photo
 \newif\if@normalphoto
 \DeclareOption{normalphoto}{\@normalphototrue}
@@ -54,14 +54,14 @@
 
 %% v1.1: Optionally load academicons
 %% v1.1.5: Handle different versions of academicons
-\if@academicons
+\if@roboto
   \ifxetexorluatex
     \RequirePackage{fontspec}
     %% academicons in TL2018 doesn't require
     %% Academicons to be installed in OS fonts
     %% so can be loaded directly
     \@ifl@t@r\fmtversion{2018/04/01}{%
-      \RequirePackage{academicons}
+      \RequirePackage{roboto}
     }{%
       % TL2017
       \@ifl@t@r\fmtversion{2017/04/01}{%
